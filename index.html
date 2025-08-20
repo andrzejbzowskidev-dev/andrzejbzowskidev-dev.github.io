@@ -4,72 +4,176 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Andrzej Bzowski – Android Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      color: #222;
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0d0d0d;
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+
     header {
-      background: #222;
-      color: #fff;
-      padding: 40px 20px;
+      background: url('https://via.placeholder.com/1600x600/0d0d0d/ffffff?text=Hero+Background') no-repeat center center/cover;
+      padding: 100px 20px;
       text-align: center;
+      animation: fadeIn 2s ease-in;
     }
-    main {
-      padding: 20px;
-      max-width: 800px;
+
+    header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 2px solid #fff;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2em;
+      color: #aaa;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
       margin: auto;
     }
-    h1 {
-      margin-top: 0;
+
+    h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #ffffff;
+      border-bottom: 1px solid #333;
+      padding-bottom: 10px;
     }
-    section {
-      margin-bottom: 40px;
+
+    .apps-grid, .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
     }
-    .email {
-      color: #333;
-      font-weight: bold;
+
+    .app, .skill {
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      transition: transform 0.3s;
     }
+
+    .app:hover, .skill:hover {
+      transform: translateY(-5px);
+    }
+
+    .app img, .skill img {
+      width: 80px;
+      margin-bottom: 10px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea, button {
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+      font-size: 1em;
+    }
+
+    input, textarea {
+      background-color: #222;
+      color: #fff;
+    }
+
+    button {
+      background-color: #08f;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #06c;
+    }
+
     footer {
-      background: #eee;
       text-align: center;
       padding: 20px;
-      font-size: 14px;
-      color: #666;
+      font-size: 0.9em;
+      color: #777;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
   <header>
+    <img src="https://via.placeholder.com/120x120.png?text=Logo" alt="Logo">
     <h1>Andrzej Bzowski</h1>
-    <p>Independent Android Developer</p>
+    <p>Independent Android Developer focused on minimalism</p>
   </header>
 
-  <main>
-    <section>
-      <h2>About Me</h2>
-      <p>
-        Hello! I'm an indie Android developer building simple and fun mobile apps. This page serves as my official developer profile.
-      </p>
-    </section>
+  <section>
+    <h2>My Apps</h2>
+    <div class="apps-grid">
+      <div class="app">
+        <img src="https://via.placeholder.com/80?text=App1" alt="App 1">
+        <p>Coming Soon</p>
+      </div>
+      <div class="app">
+        <img src="https://via.placeholder.com/80?text=App2" alt="App 2">
+        <p>Coming Soon</p>
+      </div>
+    </div>
+  </section>
 
-    <section>
-      <h2>My Apps</h2>
-      <p>No apps published yet. Stay tuned!</p>
-    </section>
+  <section>
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill">
+        <img src="https://via.placeholder.com/80?text=Kotlin" alt="Kotlin">
+        <p>Kotlin</p>
+      </div>
+      <div class="skill">
+        <img src="https://via.placeholder.com/80?text=Java" alt="Java">
+        <p>Java</p>
+      </div>
+      <div class="skill">
+        <img src="https://via.placeholder.com/80?text=Firebase" alt="Firebase">
+        <p>Firebase</p>
+      </div>
+    </div>
+  </section>
 
-    <section>
-      <h2>Contact</h2>
-      <p>If you have any questions or inquiries, feel free to contact me at:</p>
-      <p class="email">andrzejbzowski.dev@gmail.com</p>
-    </section>
-  </main>
+  <section>
+    <h2>Contact</h2>
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
 
   <footer>
-    &copy; 2025 Andrzej Bzowski – All rights reserved.
+    &copy; 2025 Andrzej Bzowski. All rights reserved.
   </footer>
 </body>
 </html>

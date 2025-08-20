@@ -1,0 +1,260 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0d0d0d;
+    color: #e0e0e0;
+    line-height: 1.6;
+  }
+  
+  header {
+    background: url('assets/hero-bg.webp') no-repeat center center/cover;
+    padding: 100px 20px;
+    text-align: center;
+    animation: fadeIn 2s ease-in;
+  }
+  
+  .hero-text {
+    position: relative;
+    top: 55px; /* 👉 вот это сдвигает только текст */
+  }
+
+  header img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 2px solid #fff;
+    transform: translate(-17px, 71px); /* ← влево и вниз */
+  }
+  
+  header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    
+  }
+  
+  header p {
+    font-size: 1.2em;
+    color: #aaa;
+  }
+  
+  section {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #ffffff;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+  }
+  
+  .apps-grid, .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .app, .skill {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  
+  .app:hover, .skill:hover {
+    transform: translateY(-5px);
+  }
+  
+  .app img, .skill img {
+    width: 80px;
+    margin-bottom: 10px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  input, textarea, button {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    font-size: 1em;
+  }
+  
+  input, textarea {
+    background-color: #222;
+    color: #fff;
+  }
+  
+  button {
+    background-color: #08f;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #06c;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+    color: #777;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-text h1 {
+    font-size: 3em;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  .hero-text p {
+    font-size: 1.2em;
+    color: #aaa;
+    margin-top: 10px;
+    animation: fadeInUp 1.4s ease-out;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .carousel {
+    overflow: hidden;
+    position: relative;
+    height: 180px;
+    margin-top: 20px;
+  }
+  
+  .carousel-track {
+    display: flex;
+    animation: scrollSkills 25s linear infinite;
+  }
+  
+  .carousel .skill {
+    flex: 0 0 200px;
+    margin: 0 10px;
+    padding: 10px;
+    text-align: center;
+    background: none;
+    border: none;
+    border-radius: 0;
+  }
+  
+  .carousel .skill img {
+    width: 60px;
+    height: auto;
+    margin-bottom: 10px;
+    filter: invert(1);
+  }
+  
+  @keyframes scrollSkills {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+
+  /* ===== Mobile Responsiveness ===== */
+@media (max-width: 768px) {
+    header {
+      padding: 60px 10px;
+    }
+  
+    header img {
+      width: 90px;
+      height: 90px;
+      transform: translate(-10px, 45px);
+    }
+  
+    .hero-text {
+      top: 30px;
+    }
+  
+    .hero-text h1 {
+      font-size: 2em;
+    }
+  
+    .hero-text p {
+      font-size: 1em;
+    }
+  
+    section {
+      padding: 40px 15px;
+    }
+  
+    h2 {
+      font-size: 1.5em;
+    }
+  
+    .app img, .skill img {
+      width: 60px;
+    }
+  
+    form {
+      gap: 10px;
+    }
+  
+    input, textarea, button {
+      font-size: 1em;
+      padding: 8px;
+    }
+  
+    .carousel .skill {
+      flex: 0 0 140px;
+      margin: 0 6px;
+    }
+  
+    .carousel {
+      height: 140px;
+    }
+  
+    footer {
+      font-size: 0.8em;
+      padding: 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero-text h1 {
+      font-size: 1.7em;
+    }
+  
+    .hero-text p {
+      font-size: 0.9em;
+    }
+  
+    .carousel .skill {
+      flex: 0 0 120px;
+    }
+  
+    .carousel .skill img {
+      width: 50px;
+    }
+  }
